@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Sports Monk API</title>
+
+        <!--CND Libraries-->
+
+        <!--Font-awesome-->
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+        <!--Bootstrap 4-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!--Tempus Domininus - A datetimepicker Library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+
+        <!--Custom CSS-->
+        <link rel="stylesheet" href="public/css/style.css" />
+</head>
+    </head>
+    <body>
+
+        <div class="container-fluid mt-5" id="wrapper">
+            <div class="row">
+                <div class="col-12">
+                    
+                    <div id="premier-league-wrap">
+                        
+                            <div class="row">
+
+                                <div class="col-12 mb-5">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-3 premier-league_header">
+                                            <div class="title text-center">
+                                                <h1 id="premier-league_title"></h1>
+                                                <img id="premier-league_logo" src="..."/>
+                                                <div id="premier-league_header__season-details" class="text-center"></div>
+                                            </div>
+                                        </div>
+                                        <div class="offset-sm-1 col-sm-8 premier-league_option">
+                                            <form class="" action="#" id="premier-league_option__form">
+
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h4>Filter Option</h4>
+                                                    </div>
+                                                    <div class="card-body">
+
+                                                        <div class="form-group row">
+                                                            <div class="col-12 col-sm-6">
+                                                                <div class="form-group row">
+                                                                    
+                                                                    <label class="col-4 col-form-label" for="premier-league_option__start-date-dtp">Start Date</label>
+                                                                    <div class="col-8">
+                                                                        
+                                                                        <div class="input-group date" id="premier-league_option__start-date-dtp" data-target-input="nearest">
+                                                                            <input type="text" class="form-control datetimepicker-input" data-target="premier-league_option__start-date-dtp" name="start_date">
+                                                                            <div class="input-group-append" data-target="#premier-league_option__start-date-dtp" data-toggle="datetimepicker">
+                                                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                                            </div>
+                                                                        </div>
+                                                                       
+                                                                    </div>
+
+                                                                </div>
+                                                                
+                                                                <div class="form-group row">
+                                                                    <label class="col-4 col-form-label" for="premier-league_option__end-date-dtp">End Date</label>
+                                                                    <div class="col-8">
+                                                                        <div class="input-group date" id="premier-league_option__end-date-dtp" data-target-input="nearest">
+                                                                            <input type="text" class="form-control datetimepicker-input" data-target="premier-league_option__end-date-dtp" name="end_date">
+                                                                            <div class="input-group-append" data-target="#premier-league_option__end-date-dtp" data-toggle="datetimepicker">
+                                                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="form-group row">
+                                                                    <label class="col-4 col-form-label" for="premier-league_option__league-id">League</label>
+                                                                    <div class="col-8">
+                                                                        <select id="premier-league_option__league-id" name="league_id" class="form-control">
+                                                                            <option value="-1">-- Please Select --</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-12 col-sm-6">
+                                                                
+                                                                <div class="form-group row">
+                                                                    <label class="col-4 col-form-label" for="premier-league_option__scoring-minute">Scoring Minute</label>
+                                                                    <div class="col-8">
+                                                                        <select id="premier-league_option__scoring-minute" name="scoring_minute" class="form-control">
+                                                                            <option value="-1">-- Please Select --</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group row">
+                                                                    <label class="col-4 col-form-label" for="premier-league_option__scoring-percentage">Scoring Percentage</label>
+                                                                    <div class="col-8">
+                                                                        <input type="range" min="0" max="100" step="0.1" id="premier-league_option__scoring-percentage" name="scoring_percentage">
+                                                                        <small id="premier-league_option__scoring-percentage-label" class="form-text text-muted"></small>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group row">
+                                                                    <label class="col-4 col-form-label">Order By</label>
+                                                                    <div class="col-8">
+                                                                        <div class="custom-control custom-radio">
+                                                                            <label>
+                                                                                <input type="radio"  class="" name="order_by" value="asc" id="premier-league_option__order-asc">
+                                                                                Ascending
+                                                                            </label>
+                                                                            &nbsp; &nbsp;
+                                                                            <label>
+                                                                                <input type="radio" checked class="" name="order_by" value="desc" id="premier-league_option__order-desc">
+                                                                                Descending
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <div class="col-12">
+                                                                <button id="premier-league_option__btn-submit" type="submit" class="btn btn-primary"><i class="fa fa-filter"></i> &nbsp; Filter</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                
+
+
+                                            </form>
+            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12" id="premier-league_body">
+                                    <div class="mt-5">
+        
+                                        <div id="team-list">
+                                            <div class="row"></div>
+                                        </div>
+            
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!--CND Libraries-->
+        <!--Bluebird-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.7.2/bluebird.min.js" integrity="sha256-vV2kNkyUsRqeVvDQOIQ5CC7207KcFSVawXutQKvgwkg=" crossorigin="anonymous"></script>
+
+        <!--jQuery-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        
+        <!--Bootstrap 4-->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <!--Axios-->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
+        <!--lodash-->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+        <!--Tempus Domininus - A datetimepicker Library -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+
+        <!--Custom codes-->
+        <script src="src/Utilities.js"></script>
+        <script src="src/Config.js"></script>
+        <script src="src/League.js"></script>
+        <script src="src/Fixture.js"></script>
+        <script src="src/Team.js"></script>
+        <script src="src/FilterHelper.js"></script>
+        <script src="src/RenderResult.js"></script>
+        <script src="src/Main.js"></script>
+
+        <script>
+            
+            var test = null;
+
+            $(function() {
+
+            }); 
+                       
+        </script>
+
+
+        <script>
+            var $startDateFilter = $('#premier-league_option__start-date');
+            var $endDateFilter = $('#premier-league_option__end-date');
+            const APIKEY = 'gNsptO8AXy94twueiS9DnERua0SrOMov6cimiaC9Ye54mhLcrNyjmQn2jtAP';
+
+            // Get English Premier League Details
+            function getLeagueByID(id) {
+                axios.get(`https://soccer.sportmonks.com/api/v2.0/leagues/${id}?api_token=${APIKEY}&include=seasons`)
+                     .then(function(response) {
+                        var premierLeague = response.data.data;
+                        console.log('Enlgish Premier League =>', premierLeague);
+
+                        $('.premier-league_title').text(premierLeague.name);
+                        $('.premier-league_logo').attr('src', premierLeague.logo_path)
+                                                 .attr('alt', `${premierLeague.name} logo`);
+
+                        for (let i = 0; i < premierLeague.seasons.data.length; i++) {
+                            var splitDate = premierLeague.seasons.data[i].name.split('/');
+
+                            $startDateFilter.append(`<option value=${splitDate[0]}>${splitDate[0]}</option>`);
+                            $endDateFilter.append(`<option value=${splitDate[1]}>${splitDate[1]}</option>`);
+                        }   
+
+                     })
+                     .catch(function(error){
+                        console.log('Enlgish Premier League ERROR =>', error);
+                     });
+            }
+            
+            function getListOfTeamsbySeasonID(id) {
+                axios.get(`https://soccer.sportmonks.com/api/v2.0/teams/season/${id}?api_token=${APIKEY}&include=stats,country`)
+                     .then(function(response) {
+                        console.log('Teams in Season =>', response.data.data);
+
+                        var teams = response.data.data;
+                        var $teamList = $('#team-list > .row');
+
+                        for (let i = 0; i < teams.length; i++) {
+                            $teamList.append(generateCard(teams[i]));
+                        }
+
+                     })
+                     .catch(function(error){
+                        console.log('Teams ERROR =>', error);
+                     });
+
+                function generateCard(teamInfo) {
+                    return `<div class="col-12 col-sm-6 col-md-4">
+                        <div class="card mb-3">
+                            <div class="row no-gutters">
+                                <div class="col-sm-4">
+                                    <img src="${teamInfo.logo_path}" alt="${teamInfo.name} logo" class="img-fluid">
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="card-body">
+                                        <h5>${teamInfo.name}</h5>
+                                        <p>${teamInfo.country.data.name}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+
+            }
+        </script>
+
+
+        </script>
+    </body>
+</html>
