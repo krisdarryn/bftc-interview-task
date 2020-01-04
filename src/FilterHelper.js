@@ -207,7 +207,7 @@ FilterHelper.prototype.buildTeamListHTML = function(filteredTeam) {
                     scoringMinutList.push(
                         `<tr class="${ key === currentFilterHelper.getFormData().scoringMinute? 'minute-hightlight bg-success font-weight-bolder' : ''}">
                             <td class="minute-item">${scoringMinute.minute}</td> 
-                            <td class="percentage-item">${scoringMinute.percentage}</td>
+                            <td class="percentage-item">${parseFloat(scoringMinute.percentage, 10).toFixed(2)}%</td>
                         </tr>`
                     );
     

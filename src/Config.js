@@ -13,8 +13,8 @@ const DEFAULTS = {
     INITIAL_VALUES: {
         LEAGUE_ID: 8,
         DATES: {
-            START_DATE: '2016-01-01',
-            END_DATE: '2017-01-01'
+            START_DATE: '2019-01-01',
+            END_DATE: '2020-01-01'
         },
         PERRIOD_INDEX: 2,
         PERCENTAGE: 20.50
